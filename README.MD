@@ -12,16 +12,15 @@ RGB —> Gamma Correction RGB -> XYZ -> Luv -> L adjusted Luv -> XYZ -> RGB -> I
 3. put the image and python file in the same folder
 
 ## execute command
+(format: .py left_range up_range right_range down_range input_image output_image)
 ```
 python proj1_1.py 0.2 0.1 0.8 0.5 fruits.jpg out_2.png
 ```
-(format: .py left_range up_range right_range down_range input_image output_image)
 performs linear scaling in the Luv domain, and writes the scaled image as output. The scaling in Luv should stretch only the luminance values. Apply linear scaling that would map the smallest L value in the specified window and all values below it
 to 0, and the largest L value in the specified window and all values above it to 100.
 ```
 python proj1_2.py 0.2 0.1 0.8 0.5 fruits.jpg out_2.png
 ```
-(format: .py left_range up_range right_range down_range input_image output_image)
 performs histogram equalization in the Luv domain, and writes the scaled image as output. Histogram equalization in Luv is applied to the luminance values, as computed in the specified window. It requires a discretization step, where the real-valued L is discretized
 into 101 values. all L values below the smallest L value in the window should be mapped to 0, and all L value above the largest L value in the window should be mapped to 100.
 
